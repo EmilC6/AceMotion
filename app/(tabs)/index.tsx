@@ -6,13 +6,8 @@ import { ThemedView } from '@/components/ThemedView';
 import { Link } from 'expo-router';
 
 export default function HomeScreen() {
-  const handleBeginnerPress = () => {
-    console.log('Navigacija na tečaj za početnike');
-  };
-
-  const handleAdvancedPress = () => {
-    console.log('Navigacija na tečaj za napredne');
-  };
+  const beginnerProgress = 30;
+  const advancedCorrections = 15;
 
   return (
     <ParallaxScrollView
@@ -39,23 +34,28 @@ export default function HomeScreen() {
 
       <ThemedView style={styles.buttonContainer}>
         <TouchableOpacity 
-          style={styles.button} 
-          onPress={handleBeginnerPress}
+          style={styles.button}
           activeOpacity={0.7} 
         >
-          <Link href='/Pocetnici' asChild>
+          <Link href='/pocetnici' asChild>
             <ThemedText style={styles.buttonText}>Početnici</ThemedText>
           </Link>
         </TouchableOpacity>
+        <ThemedText style={styles.progressText}>
+          {beginnerProgress}% tečaja završeno
+        </ThemedText>
+
         <TouchableOpacity 
-          style={styles.button} 
-          onPress={handleAdvancedPress}
+          style={styles.button}
           activeOpacity={0.7}
         >
-          <Link href='/Napredni' asChild>
-          <ThemedText style={styles.buttonText}>Napredni</ThemedText>
+          <Link href='/napredni' asChild>
+            <ThemedText style={styles.buttonText}>Napredni</ThemedText>
           </Link>
         </TouchableOpacity>
+        <ThemedText style={styles.progressText}>
+          {advancedCorrections} grešaka ispravljeno
+        </ThemedText>
       </ThemedView>
     </ParallaxScrollView>
   );
@@ -89,13 +89,12 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
   },
   introText: {
-    fontSize: 16, 
+    fontSize: 16,
     color: '#34495E',
     lineHeight: 24,  
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    alignItems: 'center',
     marginVertical: 20,
   },
   button: {
@@ -109,11 +108,17 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 4,
     elevation: 2,
+    marginBottom: 10,
   },
   buttonText: {
     color: '#FFFFFF',
     fontSize: 18,
     fontWeight: 'bold',
+  },
+  progressText: {
+    fontSize: 14,
+    color: '#2C3E50',
+    marginBottom: 15,
   },
   reactLogo: {
     height: '100%',
