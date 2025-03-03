@@ -7,7 +7,7 @@ const LekcijeScreen = () => {
   const [acceleration, setAcceleration] = useState({ x: 0, y: 0, z: 0 });
 
   const lessons = [
-   "Započnite s lekcijama koje su namijenjene onima koji tek ulaze u svijet badmintona!",
+"Započnite s lekcijama koje su namijenjene onima koji tek ulaze u svijet badmintona!",
     <Text style={styles.titleText}>Osnovne lekcije</Text>,
     "Čvrsto primite i podignite reket. Držite reket čvrsto u dominantnoj ruci s palcem postavljenim na stražnju stranu drške. Podignite reket do visine ramena držeći ruku lagano savijenu.",
     <Text style={styles.titleText}>Osnovni forehand grip</Text>,
@@ -111,6 +111,7 @@ const LekcijeScreen = () => {
   useEffect(() => {
     const subscribe = Accelerometer.addListener(({ x, y, z }) => {
       setAcceleration({ x, y, z });
+
       if (x > 1.5) handleNextLesson();
       if (x < -1.5) handlePreviousLesson();
     });
@@ -121,22 +122,22 @@ const LekcijeScreen = () => {
   return (
     <View style={styles.container}>
       <View style={styles.lessonTitleContainer}>
-        <Text style={styles.titleText}>{lessons[currentLesson].title}</Text>
+        <Text style={styles.titleText}>{lessons[currentLesson]}</Text>
       </View>
       <View style={styles.lessonContentContainer}>
-        <Text style={styles.lessonText}>{lessons[currentLesson].content}</Text>
+        <Text style={styles.lessonText}>Current Acceleration: {`X: ${acceleration.x}, Y: ${acceleration.y}, Z: ${acceleration.z}`}</Text>
       </View>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity 
-          style={[styles.navButton, currentLesson === 0 && styles.disabledButton]} 
-          onPress={handlePreviousLesson} 
+        <TouchableOpacity
+          style={[styles.navButton, currentLesson === 0 && styles.disabledButton]}
+          onPress={handlePreviousLesson}
           disabled={currentLesson === 0}
         >
           <Text style={styles.buttonText}>Prethodna</Text>
         </TouchableOpacity>
-        <TouchableOpacity 
-          style={[styles.navButton, currentLesson === lessons.length - 1 && styles.disabledButton]} 
-          onPress={handleNextLesson} 
+        <TouchableOpacity
+          style={[styles.navButton, currentLesson === lessons.length - 1 && styles.disabledButton]}
+          onPress={handleNextLesson}
           disabled={currentLesson === lessons.length - 1}
         >
           <Text style={styles.buttonText}>Sljedeća</Text>
@@ -185,7 +186,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     color: '#000',
-    fontFamily: 'Arial', 
+    fontFamily: 'Arial',
   },
   buttonContainer: {
     flexDirection: 'row',
@@ -211,3 +212,4 @@ const styles = StyleSheet.create({
 });
 
 export default LekcijeScreen;
+
