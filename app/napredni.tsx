@@ -43,6 +43,157 @@ const LekcijeScreen = () => {
   { title: "Održavanje smirenosti pod pritiskom", content: "Pod pritiskom često griješite. Pokušajte kontrolirati tempo igre i smireno donositi odluke." }
   ];
 
+  if (sensorData.accelerationX < 5) {
+    setMessage("Opuštenije držanje reketa!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 10 && sensorData.accelerationZ < 5) {
+    setMessage("Poboljšajte backhand grip!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 12) {
+    setMessage("Bolji kontakt s lopticom!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 15) {
+    setMessage("Pojačajte snagu u forehand udarcima!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 10) {
+    setMessage("Ravnomjerniji zamah kod smasha!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 8 && sensorData.accelerationY > 10) {
+    setMessage("Veća kontrola pri backhand smashu!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 6 && sensorData.accelerationZ < 8) {
+    setMessage("Optimizacija drop shot udarca!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 11 && sensorData.accelerationZ > 7) {
+    setMessage("Poboljšanje preciznosti loba!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 10) {
+    setMessage("Servis više prema kutovima!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 18) {
+    setMessage("Smanjite snagu servisa!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 9) {
+    setMessage("Varirajte visinu servisa!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 7 && sensorData.accelerationZ < 5) {
+    setMessage("Brže vraćanje u centralnu poziciju!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 12) {
+    setMessage("Bolji rad nogu kod promjena smjera!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 14) {
+    setMessage("Koristite manji broj koraka!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 9) {
+    setMessage("Bolje pozicioniranje prije udarca!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 6 && sensorData.accelerationX > 10) {
+    setMessage("Raznovrsniji udarci!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 8 && sensorData.accelerationY > 13) {
+    setMessage("Napad na slabosti protivnika!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 8 && sensorData.accelerationX > 12) {
+    setMessage("Bolja priprema za povratak smasha!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 9 && sensorData.accelerationZ < 6) {
+    setMessage("Učinkovitija obrana!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 11) {
+    setMessage("Bolja koordinacija pri igri na mreži!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 10 && sensorData.accelerationX < 7) {
+    setMessage("Povećanje snage udaraca!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 13) {
+    setMessage("Povećanje preciznosti smasha!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 6 && sensorData.accelerationZ > 12) {
+    setMessage("Smanjenje grešaka u lobovima!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 10) {
+    setMessage("Preciznije vraćanje loptice!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ < 5) {
+    setMessage("Bolja kontrola zapešća!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 9 && sensorData.accelerationX < 5) {
+    setMessage("Ravnoteža tijela prilikom udarca!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 11 && sensorData.accelerationZ > 7) {
+    setMessage("Bolja koordinacija pokreta!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 10) {
+    setMessage("Bolja koncentracija na udarac!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 7 && sensorData.accelerationZ < 6) {
+    setMessage("Strpljenje tijekom dugih izmjena!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 12) {
+    setMessage("Održavanje smirenosti pod pritiskom!");
+    setLessonCompleted(true);
+}
+
+
   const handleNextLesson = () => {
     if (currentLesson < lessons.length - 1) {
       setCurrentLesson(currentLesson + 1);
