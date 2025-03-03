@@ -11,15 +11,36 @@ const LekcijeScreen = () => {
   const [sensorData, setSensorData] = useState(null);
 
   const lessons = [
-    { title: "Uvod", content: "Započnite s lekcijama koje su namijenjene onima koji tek ulaze u svijet badmintona!" },
-    { title: "Osnovne lekcije", content: "Čvrsto primite i podignite reket. Držite reket čvrsto u dominantnoj ruci s palcem postavljenim na stražnju stranu drške." },
-    { title: "Osnovni forehand grip", content: "Držite reket kao da se rukujete postavljajući palac i kažiprst u obliku slova V. Držite zapešće opušteno za lakše udarce." },
-    { title: "Osnovni backhand grip", content: "Rotirajte reket u ruci tako da palac pritisne ravnu stranu drške. To vam daje kontrolu i snagu za udarce s backhand strane." },
-    { title: "Priprema za udarac – forehand", content: "Okrenite tijelo bočno prema mreži, reketom podignutim iznad ramena. Držite lakat visoko i pripremite se za udarac naprijed." },
-    { title: "Priprema za udarac – backhand", content: "Držite reket blizu tijela, okrećući rame unazad. Koristite zglob i ruku za precizne udarce." },
-    { title: "Osnovni udarci", content: "Forehand i backhand udarci su temeljni. Koristite pravilan grip i držanje za precizne udarce." },
-    { title: "Kretanje po terenu", content: "Koristite lagane i brze korake kako biste se pravilno postavili za svaki udarac." },
-    { title: "Pravila igre", content: "Upoznajte se s osnovnim pravilima igre, bodovanjem i načinom serviranja." }
+  { title: "Opuštenije držanje reketa", content: "Držite reket previše čvrsto. Opuštenije zapešće omogućuje brže reakcije i preciznije udarce." },
+  { title: "Poboljšajte backhand grip", content: "Backhand udarac nije optimalan. Rotirajte reket tako da palac pritišće ravnu stranu drške za više kontrole." },
+  { title: "Bolji kontakt s lopticom", content: "Loptica ne pogađa centar reketa. Fokusirajte se na bolji položaj tijela prije udarca za precizniji kontakt." },
+  { title: "Pojačajte snagu u forehand udarcima", content: "Forehand udarci nedovoljno snažni. Koristite rotaciju tijela i zapešća kako biste povećali brzinu loptice." },
+  { title: "Ravnomjerniji zamah kod smasha", content: "Smanjite trzaj pri udarcu. Zamah treba biti fluidan i dosljedan od početka do kraja." },
+  { title: "Veća kontrola pri backhand smashu", content: "Backhand smash previše neprecizan. Držite lakat bliže tijelu i fokusirajte se na rotaciju zapešća." },
+  { title: "Optimizacija drop shot udarca", content: "Prejako izvodite drop shot. Smanjite snagu i fokusirajte se na lagani i precizni pokret." },
+  { title: "Poboljšanje preciznosti loba", content: "Lobovi su prekratki. Podignite reket iznad glave kako biste dobili bolju dubinu u udarcima." },
+  { title: "Servis više prema kutovima", content: "Vaši su servisi previše centrirani. Ciljajte kutove terena kako biste otežali protivniku vraćanje loptice." },
+  { title: "Smanjite snagu servisa", content: "Servis je prejak i završava izvan terena. Pokušajte laganiji zamah s većom kontrolom." },
+  { title: "Varirajte visinu servisa", content: "Servisi su uvijek iste visine. Varirajte visinu kako biste protivnika držali nesigurnim." },
+  { title: "Brže vraćanje u centralnu poziciju", content: "Nakon udarca predugo ostajete na mjestu. Brže se vraćajte u središnju poziciju za bolju pokrivenost terena." },
+  { title: "Bolji rad nogu kod promjena smjera", content: "Spora reakcija pri promjeni smjera. Vježbajte brze i male korake kako biste se lakše kretali po terenu." },
+  { title: "Koristite manji broj koraka", content: "Previše koraka prilikom prilaska loptici. Pokušajte veće korake kako biste brže došli do idealne pozicije." },
+  { title: "Bolje pozicioniranje prije udarca", content: "Niste u idealnoj poziciji za udarac. Pokušajte se ranije pozicionirati kako biste imali više vremena za reakciju." },
+  { title: "Raznovrsniji udarci", content: "Previše koristite iste udarce. Kombinirajte drop shot, lob i smash kako biste varirali igru." },
+  { title: "Napad na slabosti protivnika", content: "Vaši udarci nisu ciljani prema slabostima protivnika. Analizirajte njihove pokrete i koristite kutove za stvaranje pritiska." },
+  { title: "Bolja priprema za povratak smasha", content: "Sporo reagirate na protivnički smash. Ostanite nisko s reketom spremnim za brzu obranu." },
+  { title: "Učinkovitija obrana", content: "Vaša obrana nije dovoljno čvrsta. Držite reket ispred sebe i fokusirajte se na brze reakcije." },
+  { title: "Bolja koordinacija pri igri na mreži", content: "Igra blizu mreže nije dovoljno precizna. Fokusirajte se na lagane i kontrolirane udarce koji ostavljaju lopticu blizu mreže." },
+  { title: "Povećanje snage udaraca", content: "Vaši su udarci nedovoljno snažni. Radite na snazi ruke i zapešća za jače udarce." },
+  { title: "Povećanje preciznosti smasha", content: "Smashovi su previše neprecizni. Fokusirajte se na jednu točku i ciljajte niže prema protivničkom terenu." },
+  { title: "Smanjenje grešaka u lobovima", content: "Previše lob udaraca završava izvan terena. Ciljajte dublje, ali s većom kontrolom." },
+  { title: "Preciznije vraćanje loptice", content: "Vaši udarci često završavaju u središtu protivničkog terena. Ciljajte kutove ili blizu mreže za učinkovitiju igru." },
+  { title: "Bolja kontrola zapešća", content: "Previše pokrećete zapešće prilikom udarca što smanjuje preciznost. Pokušajte stabilnije držanje." },
+  { title: "Ravnoteža tijela prilikom udarca", content: "Gubite ravnotežu prilikom udaraca. Radite na održavanju čvrstog stava i stabilne baze dok izvodite udarce." },
+  { title: "Bolja koordinacija pokreta", content: "Vaši udarci i kretanje nisu usklađeni. Pokušajte sinkronizirati pokrete ruku i nogu za veću učinkovitost." },
+  { title: "Bolja koncentracija na udarac", content: "Gubite fokus prilikom ključnih udaraca. Usredotočite se na tehniku i kontrolu prilikom svakog udarca." },
+  { title: "Strpljenje tijekom dugih izmjena", content: "Prebrzo pokušavate završiti poen. Budite strpljiviji i čekajte pravu priliku za napad." },
+  { title: "Održavanje smirenosti pod pritiskom", content: "Pod pritiskom često griješite. Pokušajte kontrolirati tempo igre i smireno donositi odluke." }
   ];
 
   const handleNextLesson = () => {
