@@ -95,6 +95,215 @@ const LekcijeScreen = () => {
     <Text style={styles.titleText}>Natjecateljska strategija</Text>,
     "Vježbajte kako se mentalno i fizički pripremiti za turnire te kako prilagoditi igru tijekom natjecanja."
   ];
+if (sensorData.accelerationX > 10) {
+    setMessage("Osnovne lekcije počnite s temeljnim gripovima!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 5) {
+    setMessage("Osnovni forehand grip: Držite reket čvrsto!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 7) {
+    setMessage("Osnovni backhand grip: Držite reket u obliku slova V!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 8) {
+    setMessage("Priprema za udarac – forehand: Okrenite tijelo bočno!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 5) {
+    setMessage("Priprema za udarac – backhand: Rotirajte tijelo!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 6) {
+    setMessage("Osnovni rad nogu: Brzo se krećite prema loptici!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 8) {
+    setMessage("Početni servis – forehand: Udarite lopticu ravnim pokretom!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 7) {
+    setMessage("Početni servis – backhand: Udarite lopticu nisko!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 5) {
+    setMessage("Osnove ravnoteže: Držite koljena lagano savijena!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ < 4) {
+    setMessage("Lob udarac: Udarite lopticu ispod nje!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 8) {
+    setMessage("Drop shot udarac: Usporite pokret!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 9) {
+    setMessage("Clear udarac: Udarite punim zamahom!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 6) {
+    setMessage("Drive udarac: Udarite nisko iznad mreže!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 11) {
+    setMessage("Smash udarac: Podignite reket visoko!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 4) {
+    setMessage("Block udarac: Lagano zaustavite lopticu!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 10) {
+    setMessage("Net udarac: Preciznost i kontrola!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 6) {
+    setMessage("Crosscourt udarci: Udarite dijagonalno!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 5) {
+    setMessage("Finta: Usporite pokret!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 9) {
+    setMessage("Underarm clear: Udarite iz donjeg položaja!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 10) {
+    setMessage("Napredne tehnike: Rotacija zapešća!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ < 6) {
+    setMessage("Napredni backhand smash: Brza rotacija!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 12) {
+    setMessage("Refleksna igra na mreži: Brze reakcije!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 8) {
+    setMessage("Kombinirani udarci: Vježbajte drop shot i smash!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 11) {
+    setMessage("Obrana smasha: Blokirajte udarac!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 5) {
+    setMessage("Napredna kontrola servisa: Varirajte brzinu!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 12) {
+    setMessage("Napredni footwork: Brzi koraci!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 10) {
+    setMessage("Taktike igre na mreži: Kratki udarci!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 7) {
+    setMessage("Crosscourt smash: Udarite u kut!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 9) {
+    setMessage("Kontrolirani lob: Preciznost udarca!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ < 7) {
+    setMessage("Korištenje kutova u igri: Otežajte protivniku!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 8) {
+    setMessage("Izrada plana igre: Iskoristite slabosti!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 9) {
+    setMessage("Psihološke strategije: Ostanite fokusirani!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 12) {
+    setMessage("Napredne taktike: Vraćanje smasha!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 8) {
+    setMessage("Taktika u parovima: Komunicirajte!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX < 6) {
+    setMessage("Brza izmjena udaraca: Fokusirajte se na izdržljivost!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 10) {
+    setMessage("Sparing – agresivna igra: Brzi napadi!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 7) {
+    setMessage("Sparing – defenzivna igra: Preciznost u obrani!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY > 8) {
+    setMessage("Analiza igre: Prilagodite taktike!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationZ > 9) {
+    setMessage("Korištenje senzora: Poboljšajte performanse!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 6) {
+    setMessage("Kondicijski trening: Oponašajte uvjete na terenu!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationY < 5) {
+    setMessage("Raspored treninga: Planirajte napredak!");
+    setLessonCompleted(true);
+}
+
+if (sensorData.accelerationX > 10) {
+    setMessage("Natjecateljska strategija: Pripremite se za turnire!");
+    setLessonCompleted(true);
+}
 
   const handleNextLesson = () => {
     if (currentLesson < lessons.length - 1) {
